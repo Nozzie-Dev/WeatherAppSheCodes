@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+    <style>
+      #city {
+        background-color: #f9f7fe;
+        border: none;
+        color: rgba(39, 33, 66, 0.4);
+        font-size: 16px;
+        padding: 20px;
+        width: 75%;
+        border-radius: 6px;
+      }
+      .btnSearch {
+        margin-left: 5px;
+        font-size: 16px;
+        background-color: #f15dd1;
+        color: white;
+        border: none;
+        padding: 20px;
+        line-height: 1;
+        border-radius: 5px;
+      }
+      .current-day {
+        display: flex;
+      }
+      #temperature {
+        font-size: 80px;
+        font-weight: bold;
+        left: 450px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search">
+      <form>
+        <input
+          type="text"
+          name="city"
+          id="city"
+          placeholder="Enter a city..."
+          required
+        />
+        <input class="btnSearch" type="submit" value="Search" />
+      </form>
+    </div>
+    <div class="time">
+      <h3 class="time-date">"..."</h3>
+    </div>
+    <header class="current-day">
+      <div class="details">
+        <h1>Paris</h1>
+        <p>
+          Saturday 15:32, moderate rain <br />
+          Humidity: <strong>87%</strong>, Wind:<strong>7.2km/h</strong>
+        </p>
+      </div>
+      <p id="temperature">🌣 14°C</p>
+    </header>
+    <section>
+      <ul>
+        <li class="dayTemperatures">
+          <span class="dayOfWeek">Sun 🌥</span><br />
+          <strong>14°C</strong> - 18°C
+        </li>
+        <li class="dayTemperatures">
+          <span class="dayOfWeek">Mon 🌥</span><br />
+          <strong>14°C</strong> - 18°C
+        </li>
+        <li class="dayTemperatures">
+          <span class="dayOfWeek">Tue 🌥</span><br />
+          <strong>14°C</strong> - 18°C
+        </li>
+        <li class="dayTemperatures">
+          <span class="dayOfWeek">Wed 🌥</span><br />
+          <strong>14°C</strong> - 18°C
+        </li>
+        <li class="dayTemperatures">
+          <span class="dayOfWeek">Thu 🌥</span> <br /><strong>14°C</strong> -
+          18°C
+        </li>
+      </ul>
+    </section>
+    <footer>
+      <p>
+        This is coded by
+        <a href="">Noziphezinhle <em>Nozzie</em> Nzimande</a> and is
+        <a href=""> on Github</a> and <a href=""> hosted on Netlify</a>
+      </p>
+    </footer>
+    <script>
+      let currentDate = new Date();
+      let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      let dayTime = `${days[currentDate.getDay()]}, 
+       ${currentDate.getHours()}: ${currentDate.getMinutes()}`;
+      console.log(dayTime);
+    </script>
+  </body>
+</html>
